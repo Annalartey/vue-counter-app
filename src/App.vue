@@ -9,6 +9,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+        <p>{{count}}</p>
     </div>
   </header>
 
@@ -16,6 +17,14 @@ import TheWelcome from './components/TheWelcome.vue'
     <TheWelcome />
   </main>
 </template>
+
+<script>
+  data () {
+    return{
+      count: 0
+    }
+  }
+</script>
 
 <style scoped>
 header {
