@@ -5,8 +5,8 @@
   <button @click="resetCount">Reset</button>
 
   <div>
-    <input type="number" />
-    <button>Set Value</button>
+    <input v-model="count" ntype="number" />
+    <button @click="setValue">Set Value</button>
   </div>
 </template>
 
@@ -29,6 +29,9 @@
     },
     resetCount () {
       console.log("reset")
+      this.count = 0;
+    },
+    setValue () {
       this.count = 0;
     },
     },
