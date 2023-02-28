@@ -1,28 +1,37 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <p>Count is: {{ count }} </p>
+  <button @click="increaseCount">increase</button>
+  <button @click="decreaseCount">decrease</button>
+  <button @click="resetCount">Reset</button>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-        <p>{{count}}</p>
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <input type="number" />
+    <button>Set Value</button>
+  </div>
 </template>
 
 <script>
-  data () {
+  export default {
+    name: "Counter",
+    data () {
     return{
-      count: 0
+      count: 0,
     }
+  },
+    methods : {
+    increaseCount () {
+      console.log("increased")
+      this.count++;
+    },
+    decreaseCount () {
+      console.log("decreased")
+      this.count--;
+    },
+    resetCount () {
+      console.log("reset")
+      this.count = 0;
+    },
+    },
   }
 </script>
 
